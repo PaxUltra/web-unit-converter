@@ -14,9 +14,9 @@
   <h1>Unit Converter</h1>
 
   <div id="nav-bar">
-    <button id="length-button" class="unit-button">Length</button>
-    <button id="mass-button" class="unit-button">Mass</button>
-    <button id="temp-button" class="unit-button">Temperature</button>
+    <button id="length-button" class="unit-button" onclick="showForm('length')">Length</button>
+    <button id="mass-button" class="unit-button" onclick="showForm('mass')">Mass</button>
+    <button id="temp-button" class="unit-button" onclick="showForm('temp')">Temperature</button>
   </div>
 
   <div id="length-form" class="unit-form">
@@ -75,6 +75,8 @@
       </select>
     </form>
   </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
 </body>
 
 </html>
