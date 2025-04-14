@@ -20,59 +20,65 @@
   </div>
 
   <div id="length-form" class="unit-form">
-    <form action="#">
-      <label for="length">Enter the length to convert:</label>
-      <input type="text" id="length" name="length">
+    <form action="/convert" method="POST">
+      <label for="value">Enter the length to convert:</label>
+      <input type="text" id="value" name="value">
 
-      <label for="len-from">Unit to convert from:</label>
-      <select name="len-from" id="len-from">
+      <label for="from">Unit to convert from:</label>
+      <select name="from" id="from">
         <option value="ft">Feet</option>
         <option value="m">Meters</option>
       </select>
 
-      <label for="len-to">Unit to convert to:</label>
-      <select name="len-to" id="len-to">
+      <label for="to">Unit to convert to:</label>
+      <select name="to" id="to">
         <option value="ft">Feet</option>
         <option value="m">Meters</option>
       </select>
+
+      <input type="submit" value="Submit">
     </form>
   </div>
 
   <div id="mass-form" class="unit-form hidden">
-    <form action="#">
-      <label for="mass">Enter the mass to convert:</label>
-      <input type="text" id="mass" name="mass">
+    <form action="/convert" method="POST">
+      <label for="value">Enter the mass to convert:</label>
+      <input type="text" id="value" name="value">
 
-      <label for="mass-from">Unit to convert from:</label>
-      <select name="mass-from" id="mass-from">
+      <label for="from">Unit to convert from:</label>
+      <select name="from" id="from">
         <option value="lbs">Pounds</option>
         <option value="kg">Kilograms</option>
       </select>
 
-      <label for="mass-to">Unit to convert to:</label>
-      <select name="mass-to" id="mass-to">
+      <label for="to">Unit to convert to:</label>
+      <select name="to" id="to">
         <option value="lbs">Pounds</option>
         <option value="kg">Kilograms</option>
       </select>
+
+      <input type="submit" value="Submit">
     </form>
   </div>
 
   <div id="temp-form" class="unit-form hidden">
-    <form action="#">
-      <label for="temp">Enter the temperature to convert:</label>
-      <input type="text" id="temp" name="temp">
+    <form action="/convert" method="POST">
+      <label for="value">Enter the temperature to convert:</label>
+      <input type="text" id="value" name="value">
 
-      <label for="temp-from">Unit to convert from:</label>
-      <select name="temp-from" id="temp-from">
+      <label for="from">Unit to convert from:</label>
+      <select name="from" id="from">
         <option value="f">Farenheit</option>
         <option value="c">Celsius</option>
       </select>
 
-      <label for="temp-to">Unit to convert to:</label>
-      <select name="temp-to" id="temp-to">
+      <label for="to">Unit to convert to:</label>
+      <select name="to" id="to">
         <option value="f">Farenheit</option>
         <option value="c">Celsius</option>
       </select>
+
+      <input type="submit" value="Submit">
     </form>
   </div>
 
