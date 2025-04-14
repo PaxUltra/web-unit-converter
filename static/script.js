@@ -36,4 +36,19 @@ async function convert(type, event) {
     })
 
     const data = await response.json();
+
+    if (response.ok) {
+        // Hide all forms
+        const forms = document.querySelectorAll('.unit-form')
+        forms.forEach(form => form.classList.add('hidden'))
+
+        // Prepare the result div
+        // Then display it
+        document.getElementById('result-text').innerText = `Result: ${data.result}`;
+        document.getElementById('result-div').classList.remove('hidden');
+    } else {
+        // Show the error
+        document.getElementById('result-text').innerText = `Error: ${data.error}`;
+        document.getElementById('result-div').classList.remove('hidden');
+    }
 }
