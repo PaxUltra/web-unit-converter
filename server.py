@@ -8,11 +8,11 @@ def index():
 
 @app.route('/convert', methods=['POST'])
 def convert():
-    value = request.form.get('value')
-    unit_from = request.form.get('from')
-    unit_to = request.form.get('to')
+    data = request.get_json()
 
-    return { 'Value': value, 'From': unit_from, 'To': unit_to }
+    print(data)
+
+    return jsonify({"received": data})
 
 if __name__ == '__main__':
     app.run(debug=True)
