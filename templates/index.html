@@ -4,11 +4,77 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+
   <title>Unit Converter</title>
 </head>
 
 <body>
   <h1>Unit Converter</h1>
+
+  <div id="nav-bar">
+    <button id="length-button" class="unit-button">Length</button>
+    <button id="mass-button" class="unit-button">Mass</button>
+    <button id="temp-button" class="unit-button">Temperature</button>
+  </div>
+
+  <div id="length-form" class="unit-form">
+    <form action="#">
+      <label for="length">Enter the length to convert:</label>
+      <input type="text" id="length" name="length">
+
+      <label for="len-from">Unit to convert from:</label>
+      <select name="len-from" id="len-from">
+        <option value="ft">Feet</option>
+        <option value="m">Meters</option>
+      </select>
+
+      <label for="len-to">Unit to convert to:</label>
+      <select name="len-to" id="len-to">
+        <option value="ft">Feet</option>
+        <option value="m">Meters</option>
+      </select>
+    </form>
+  </div>
+
+  <div id="mass-form" class="unit-form hidden">
+    <form action="#">
+      <label for="mass">Enter the mass to convert:</label>
+      <input type="text" id="mass" name="mass">
+
+      <label for="mass-from">Unit to convert from:</label>
+      <select name="mass-from" id="mass-from">
+        <option value="lbs">Pounds</option>
+        <option value="kg">Kilograms</option>
+      </select>
+
+      <label for="mass-to">Unit to convert to:</label>
+      <select name="mass-to" id="mass-to">
+        <option value="lbs">Pounds</option>
+        <option value="kg">Kilograms</option>
+      </select>
+    </form>
+  </div>
+
+  <div id="temp-form" class="unit-form hidden">
+    <form action="#">
+      <label for="temp">Enter the temperature to convert:</label>
+      <input type="text" id="temp" name="temp">
+
+      <label for="temp-from">Unit to convert from:</label>
+      <select name="temp-from" id="temp-from">
+        <option value="f">Farenheit</option>
+        <option value="c">Celsius</option>
+      </select>
+
+      <label for="temp-to">Unit to convert to:</label>
+      <select name="temp-to" id="temp-to">
+        <option value="f">Farenheit</option>
+        <option value="c">Celsius</option>
+      </select>
+    </form>
+  </div>
 </body>
 
 </html>
