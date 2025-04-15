@@ -27,12 +27,12 @@
       <label for="length-from">Unit to convert from:</label>
       <select name="length-from" id="length-from">
         <option value="ft">Feet</option>
-        <option value="m">Meters</option>
+        <option value="m" selected>Meters</option>
       </select>
 
       <label for="length-to">Unit to convert to:</label>
       <select name="length-to" id="length-to">
-        <option value="ft">Feet</option>
+        <option value="ft" selected>Feet</option>
         <option value="m">Meters</option>
       </select>
 
@@ -47,14 +47,14 @@
 
       <label for="mass-from">Unit to convert from:</label>
       <select name="mass-from" id="mass-from">
-        <option value="lbs">Pounds</option>
+        <option value="lbs" selected>Pounds</option>
         <option value="kg">Kilograms</option>
       </select>
 
       <label for="mass-to">Unit to convert to:</label>
       <select name="mass-to" id="mass-to">
         <option value="lbs">Pounds</option>
-        <option value="kg">Kilograms</option>
+        <option value="kg" selected>Kilograms</option>
       </select>
 
       <button onclick="convert('mass', event)">Submit</button>
@@ -68,14 +68,14 @@
 
       <label for="temp-from">Unit to convert from:</label>
       <select name="temp-from" id="temp-from">
-        <option value="f">Farenheit</option>
+        <option value="f" selected>Farenheit</option>
         <option value="c">Celsius</option>
       </select>
 
       <label for="temp-to">Unit to convert to:</label>
       <select name="temp-to" id="temp-to">
         <option value="f">Farenheit</option>
-        <option value="c">Celsius</option>
+        <option value="c" selected>Celsius</option>
       </select>
 
       <button onclick="convert('temp', event)">Submit</button>
