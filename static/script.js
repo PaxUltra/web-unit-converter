@@ -17,7 +17,7 @@ function showForm(formType) {
 }
 
 async function convert(type, event) {
-    // You will never 
+    // You will never escape it
     event.preventDefault();
 
     let value, unitTo, unitFrom;
@@ -57,4 +57,17 @@ async function convert(type, event) {
         // Show the error
         editAndShowResult(`Error: ${data.error}`)
     }
+}
+
+function reset() {
+    activeForm = document.getElementsByClassName('active-form')
+
+    // Clear all form values
+    values = document.querySelectorAll('input[type="text"]');
+    values.forEach(input => input.value = "");
+
+    // Hide the result div
+    document.getElementById('result-div').classList.add('hidden');
+
+    // Show the active form
 }
