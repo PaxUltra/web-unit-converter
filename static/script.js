@@ -1,7 +1,16 @@
-function showForm(formType) {
+function hideForms() {
     // Hide all forms
     const forms = document.querySelectorAll('.unit-form');
     forms.forEach(form => form.classList.add('hidden'));
+}
+
+function editAndShowResult(message) {
+    document.getElementById('result-text').innerText = message;
+    document.getElementById('result-div').classList.remove('hidden');
+}
+
+function showForm(formType) {
+    hideForms();
 
     // Re-enable the selected form
     document.getElementById(`${formType}-form`).classList.remove('hidden');
@@ -39,16 +48,13 @@ async function convert(type, event) {
 
     if (response.ok) {
         // Hide all forms
-        const forms = document.querySelectorAll('.unit-form')
-        forms.forEach(form => form.classList.add('hidden'))
+        hideForms();
 
         // Prepare the result div
         // Then display it
-        document.getElementById('result-text').innerText = `Result: ${data.result}`;
-        document.getElementById('result-div').classList.remove('hidden');
+        editAndShowResult(`Result: ${data.result}`)
     } else {
         // Show the error
-        document.getElementById('result-text').innerText = `Error: ${data.error}`;
-        document.getElementById('result-div').classList.remove('hidden');
+        editAndShowResult(`Error: ${data.error}`)
     }
 }
