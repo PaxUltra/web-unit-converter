@@ -1,7 +1,9 @@
 function hideForms() {
     // Hide all forms
     const forms = document.querySelectorAll('.unit-form');
-    forms.forEach(form => form.classList.add('hidden'));
+    forms.forEach(form => {
+        form.classList.add('hidden');
+    });
 }
 
 function editAndShowResult(message) {
@@ -13,7 +15,11 @@ function showForm(formType) {
     hideForms();
 
     // Re-enable the selected form
-    document.getElementById(`${formType}-form`).classList.remove('hidden');
+    const selectedForm = document.getElementById(`${formType}-form`)
+    const activeForm = document.querySelector('.active-form');
+    selectedForm.classList.remove('hidden');
+    activeForm.classList.remove('active-form');
+    selectedForm.classList.add('active-form')
 }
 
 async function convert(type, event) {
@@ -60,14 +66,15 @@ async function convert(type, event) {
 }
 
 function reset() {
-    activeForm = document.getElementsByClassName('active-form')
-
     // Clear all form values
-    values = document.querySelectorAll('input[type="text"]');
+    const values = document.querySelectorAll('input[type="text"]');
     values.forEach(input => input.value = "");
 
     // Hide the result div
     document.getElementById('result-div').classList.add('hidden');
 
     // Show the active form
+    const activeForm = document.querySelector('.active-form');
+    const activeFormType = activeForm.id.slice(0, -5);
+    showForm(activeFormType);
 }
