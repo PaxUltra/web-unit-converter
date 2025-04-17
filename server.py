@@ -19,8 +19,30 @@ def convert():
             result = value * 3.28084
         elif unit_from == 'ft' and unit_to == 'm':
             result = value / 3.28084
+        elif unit_from == unit_to:
+            result = value
         else:
             return jsonify({'error': 'Unsupported length unit'}), 400
+        
+    if conversion_type == 'mass':
+        if unit_from == 'lbs' and unit_to == 'kg':
+            result = value / 2.205
+        elif unit_from == 'kg' and unit_to == 'lbs':
+            result = value * 2.205
+        elif unit_from == unit_to:
+            result = value
+        else:
+            return jsonify({'error': 'Unsupported mass unit'}), 400
+        
+    if conversion_type == 'temp':
+        if unit_from == 'f' and unit_to == 'c':
+            result = (value - 32) * (5/9)
+        elif unit_from == 'c' and unit_to == 'f':
+            result = (value * (9/5)) + 32
+        elif unit_from == unit_to:
+            result = value
+        else:
+            return jsonify({'error': 'Unsupported temperature unit'}), 400
 
     return jsonify({'result': result})
 
