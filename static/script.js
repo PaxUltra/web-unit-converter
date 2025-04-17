@@ -58,10 +58,10 @@ async function convert(type, event) {
 
         // Prepare the result div
         // Then display it
-        editAndShowResult(`Result: ${data.result}`)
+        editAndShowResult(`Result: ${data.result} ${data.units}`);
     } else {
         // Show the error
-        editAndShowResult(`Error: ${data.error}`)
+        editAndShowResult(`Error: ${data.error}`);
     }
 }
 

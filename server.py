@@ -13,6 +13,14 @@ def convert():
     unit_from = data['unitFrom']
     unit_to = data['unitTo']
     conversion_type = data['type']
+    unit_strings = {
+        "m": "meters",
+        "ft": "feet",
+        "lbs": "pounds",
+        "kg": "kilograms",
+        "f": "degrees Fahrenheit",
+        "c": "degrees Celsius"
+    }
 
     if conversion_type == 'length':
         if unit_from == 'm' and unit_to == 'ft':
@@ -44,7 +52,7 @@ def convert():
         else:
             return jsonify({'error': 'Unsupported temperature unit'}), 400
 
-    return jsonify({'result': result})
+    return jsonify({'result': result, 'units': unit_strings.get(unit_to, '')})
 
 if __name__ == '__main__':
     app.run(debug=True)
